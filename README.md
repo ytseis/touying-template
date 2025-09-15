@@ -1,4 +1,5 @@
 # touying-template
-Touying template for academic presentation.
+- Touying template for academic presentation.
+- You can use [touying-exporter](https://github.com/touying-typ/touying-exporter) to export Typst source files to PPTX or HTML.
 
 ![](/figure/example.png)
