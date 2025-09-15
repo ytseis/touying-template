@@ -11,7 +11,7 @@
     subtitle: [Subtitle],
     author: [Author],
     institution: [Institution],
-    header: [Header]
+    header: [Conference\@Location (Date)]
   )
 )
 
@@ -35,7 +35,7 @@
     subtitle: [Subtitle],
     author: [Author],
     institution: [Institution],
-    header: [Header]
+    header: [Conference\@Location (Date)]
   )
 )
 ```
@@ -72,7 +72,7 @@ $ <eq:1>
 
 = Appendix
 
-== Appendix1
+== Appendix 1
 
 Note that appendix is *not counted* in the total page count.
 
