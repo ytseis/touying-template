@@ -1,3 +1,4 @@
+#import "@preview/polylux:0.4.0": *
 #import "@preview/touying:0.6.1"
 #import "theme.typ": *
 
@@ -39,8 +40,7 @@
   )
 )
 ```
-- Note:
-  - `*text*` is modified to *underline with the secondary color*, not #text(weight: "bold")[bold].
+Note that `*text*` is modified to *underline with the secondary color*, not #text(weight: "bold")[bold].
 
 == Example
 
@@ -67,6 +67,56 @@ $ <eq:1>
 
 @eq:1 is the *quadratic formula*.
 ```
+
+== Speaker notes with pdfpc
+
+You can add speaker notes using `#pdfpc.speaker-note()`.
+
+```typst
+== Speaker notes with pdfpc
+
+You can add speaker notes using `#pdfpc.speaker-note()`.
+
+#pdfpc.speaker-note("This is a speaker note.")
+```
+
+The `polylux2pdfpc` command generates a `.pdfpc` file.
+
+```bash
+typst compile example.typ # create example.pdf
+polylux2pdfpc example.typ # create example.pdfpc
+pdfpc example.pdf         # start presentation
+```
+
+=== Notes:
+- pdfpc v4.5.0 did not display speaker notes, possibly because of `pdfpcFormat: 2`.
+- Installing pdfpc v4.7.0 from #link("https://github.com/pdfpc/pdfpc/releases", text(fill: blue, underline([GitHub Releases]))) solved this issue.
+
+#pdfpc.speaker-note("This is a speaker note.")
+
+---
+
+Example of the speaker view and the main presentation:
+
+#align(horizon)[
+  #grid(
+    columns: (1fr, 1fr),
+    column-gutter: 1em,
+    [
+      #figure(
+        image("figure/speaker-view.png"),
+        caption: "Speaker view",
+        numbering: none,
+      )
+    ], [
+      #figure(
+        image("figure/main-presentation.png"),
+        caption: "Main presentation",
+        numbering: none,
+      )
+    ]
+  )
+]
 
 #show: appendix
 
