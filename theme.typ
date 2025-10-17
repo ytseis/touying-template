@@ -49,7 +49,7 @@ Note:
 		config-page(
 			header: header,
 			footer: none,
-			margin: (top: 2.25em, bottom: 0.5em, x: 1em)
+			margin: (top: 2.25em, bottom: 1em, x: 1em)
 		)
 	)
 	touying-slide(self: self, config: config, repeat: repeat, setting: setting, composer: composer, ..bodies)
