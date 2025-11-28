@@ -54,8 +54,6 @@ $ <eq:2>
 
 @eq:2 is the *quadratic formula*.
 
-#line(length: 100%)
-
 ```typst
 Here is an example of a displayed equation:
 $
@@ -85,7 +83,7 @@ The `polylux2pdfpc` command generates a `.pdfpc` file.
 ```bash
 typst compile example.typ # create example.pdf
 polylux2pdfpc example.typ # create example.pdfpc
-pdfpc example.pdf         # start presentation
+pdfpc example.pdf -w both # start a presentation with speaker and main windows
 ```
 
 === Notes:
