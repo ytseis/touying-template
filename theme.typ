@@ -23,6 +23,10 @@ Note:
 #let secondary = rgb("#cc6d2d") // emphasize
 #let tertiary = rgb("#6495cf")  // others
 
+// margin
+#let margin-bottom = 1.25em
+#let margin-side = 1em
+
 #let slide(
 	config: (:),
 	repeat: auto,
@@ -49,7 +53,7 @@ Note:
 		config-page(
 			header: header,
 			footer: none,
-			margin: (top: 2.25em, bottom: 1em, x: 1em)
+			margin: (top: 2.25em, bottom: margin-bottom, x: margin-side)
 		)
 	)
 	touying-slide(self: self, config: config, repeat: repeat, setting: setting, composer: composer, ..bodies)
@@ -139,9 +143,9 @@ Note:
   // equation
   set math.equation(numbering: "(1)")
   show math.equation: it => {
-    if it.block and not it.has("label") [
-      #counter(math.equation).update(v => v - 1)
-      #math.equation(it, block: true, numbering: none) #label("")
+    if it.block and not it.has("label") and it.numbering != none [
+      #counter(math.equation).update(v => calc.max(0, v - 1))
+      #math.equation(it.body, block: true, numbering: none)
     ] else {
       it
     }
