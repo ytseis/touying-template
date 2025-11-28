@@ -182,6 +182,8 @@ Note:
 	show "、": "，"
 	show "。": "．"
 	show strong: it => text(fill: secondary, weight: "regular", underline(it.body))
+  show link: set text(fill: blue)
+  show link: underline
 
   // code block
   show raw.where(block: true): set block(
