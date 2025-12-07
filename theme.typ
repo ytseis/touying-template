@@ -150,7 +150,7 @@ Note:
       it
     }
   }
-  show math.equation: set text(font: (font-math), size: 1.05em)
+  show math.equation: set text(font: (font-math), size: 1em)
   // show equation number if referred
 	// reference: https://forum.typst.app/t/how-to-conditionally-enable-equation-numbering-for-labeled-equations/977
   show ref: it => {
